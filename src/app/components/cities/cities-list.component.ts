@@ -33,6 +33,6 @@ export class CitiesListComponent implements OnInit, OnDestroy{
     public deleteCity(id: number): void {
         this.citiesService.deleteCity(id)
             .pipe(takeUntil(this.destroy$))
-            .subscribe(() => this.cities.splice(this.cities.findIndex(x => x.id == id), 1));        
+            .subscribe(() => this.cities.splice(this.cities.findIndex(city => city.id === id), 1));        
     }
 }
